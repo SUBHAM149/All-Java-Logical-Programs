@@ -1,0 +1,138 @@
+//Bank Details Program
+package com.sub.blc;
+public class BankDetails {
+
+    
+    private String customerName;
+    private int accountNumber;
+    private double currentBalance;
+
+    public static String bankName = "SBI BANK";
+    public static String bankAddress = "ODISHA,INDIA";
+    public static String bankIFSCCode = "SBTOD0001234";
+
+    public void setCustomerDeatils(String name, int accNumber, double balance) {
+        if (balance <= 0) {
+            System.out.println("Opening balance must be greater than zero!");
+            System.exit(0);
+        }
+
+        this.customerName = name;
+        this.accountNumber = accNumber;
+        this.currentBalance = balance;
+        System.out.println("\nCustomer account created successfully!");
+    }
+     
+       public static void displayBankDetails() {
+         System.out.println("  ======== Bank Details ========");
+         System.out.println("   Bank Name     : " + bankName);
+         System.out.println("   Bank Address  : " + bankAddress);
+         System.out.println("   IFSC Code     : " + bankIFSCCode);
+    }
+
+    public void withdraw(double amount) {
+        if (amount > currentBalance) {
+            System.out.println("You have insufficient balance!");
+            System.exit(0);
+        }
+        currentBalance -= amount;
+        System.out.println("Withdrawal successful! ₹" + amount + " debited.");
+    }
+
+    public void deposit(double amount) {
+        if (amount <= 0) {
+            System.out.println("Deposit amount should be greater than zero!");
+            System.exit(0);
+        }
+        currentBalance += amount;
+        System.out.println("Deposit successful! ₹" + amount + " credited.");
+    }
+
+    public double getCurrentBalance() {
+        return currentBalance;
+    }
+
+    public String displayDetails() {
+        return "Customer [Name=" + customerName + ", AccountNumber=" + accountNumber + ", Balance=" + currentBalance + "]";
+    }
+}
+
+package com.sub.elc;
+
+import com.sub.blc.BankDetails;
+	import java.util.Scanner;
+
+	public class BankCustomer {
+	    public static void main(String[] args) {
+
+	        Scanner sc = new Scanner(System.in);
+	        BankDetails bank = new BankDetails();
+
+	        
+	        System.out.println("======= Welcome to " + BankDetails.bankName + " ========");
+	        BankDetails.displayBankDetails();
+	        System.out.println("=================================");
+
+	        System.out.print("   Enter Customer Name : ");
+	        String name = sc.nextLine();
+
+	        System.out.print("   Enter Account Number : ");
+	        int accNumber = sc.nextInt();
+
+	        System.out.print("   Enter Opening Balance : ");
+	        double balance = sc.nextDouble();
+
+	        bank.setCustomerDeatils(name, accNumber, balance);
+	        
+	        
+	        while (true) {
+	        	System.out.println("1. Display Bank Details"); 
+	        	System.out.println("2. Display Customer Details");
+	        	System.out.println("3. Deposit");
+	        	System.out.println("4. Withdraw");
+	        	System.out.println("5. Check Balance");
+	        	System.out.println("6. Exit");
+	        	System.out.print("Enter your choice: ");
+
+
+
+	            int choice = sc.nextInt();
+
+	            switch (choice) {
+	                case 1:
+	                    BankDetails.displayBankDetails();
+	                    break;
+
+	               
+	                case 2:
+	                    System.out.print("Enter deposit amount: ");
+	                    double depositAmount = sc.nextDouble();
+	                    bank.deposit(depositAmount);
+	                    break;
+
+	                case 3:
+	                    System.out.print("Enter withdrawal amount: ");
+	                    double withdrawAmount = sc.nextDouble();
+	                    bank.withdraw(withdrawAmount);
+	                    break;
+
+	                case 4:
+	                    System.out.println("Current Balance: ₹" + bank.getCurrentBalance());
+	                    break;
+
+	                case 5:
+	                    System.out.println(bank.displayDetails());
+	                    break;
+
+	                case 6:
+	                    System.out.println("Thank you for banking with " + BankDetails.bankName + "!");
+	                    System.exit(0);
+	                    break;
+
+	                default:
+	                    System.out.println("Invalid choice! Please try again.");
+	            }
+	        }
+	    }
+	}
+
