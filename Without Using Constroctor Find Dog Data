@@ -1,0 +1,35 @@
+//Without Using Constroctor Find Dog Data
+package com.sub.blc;
+
+public class Dog{
+    public String name;
+    public int age;
+    public double height;
+    
+    public void information() {
+    	System.out.println("My name is :"+name);
+    	System.out.println("My height :"+height);
+    	System.out.println("My age is :"+age);
+    }
+    public void bark () {
+  	  System.out.println("I am "+name+" every time i bark!!!!");
+    }
+}
+package com.sub.elc;
+
+import com.sub.blc.Dog;
+
+public class DogInformation {
+
+	public static void main(String[] args) {
+		Dog d=new Dog();
+		d.age=12;
+		d.height=3.4;
+		d.name="tipu";
+		d.information();
+		d.bark();
+		
+
+	}
+
+}
