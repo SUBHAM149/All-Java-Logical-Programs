@@ -1,0 +1,67 @@
+// Find Car Properties
+package com.sub.blc;
+
+public class CarProperties {
+    public String name;
+    public int model;
+    public String color;
+    
+    public void getCarInformation() {
+    	System.out.println("My Name is :"+name);
+    	System.out.println("My model is :"+model);
+    	System.out.println("My color is :"+color);
+    }
+    public void drive() {
+    	System.out.println("I always rady to go");
+    }
+    
+}
+package com.sub.elc;
+
+import com.sub.blc.CarProperties;
+
+public class CarAbout {
+
+	public static void main(String[] args) {
+		CarProperties bmw=new CarProperties();
+         bmw.name="bmw";
+         bmw.color="black";
+         bmw.model=2025;
+         bmw.getCarInformation();
+         bmw.drive();
+	}
+
+}
+
+//package com.sub.elc;
+
+//import com.sub.blc.Car;
+//import java.util.Scanner;
+//
+//public class CarELC {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//
+//        System.out.print("Enter Car Model :");
+//        String model = sc.nextLine();
+//
+//        System.out.print("Enter Car Manufacturing year :");
+//        int year = sc.nextInt();
+//
+//        System.out.print("Enter Car Price :");
+//        double price = sc.nextDouble();
+//
+//        // Input Validation
+//        if (year <= 2010) {
+//            System.out.println("year must be greater than 2010");
+//        } else if (price <= 0) {
+//            System.out.println("Price must be positive integer");
+//        } else {
+//            // Create Car object only if inputs are valid
+//            Car car = new Car(model, year, price);
+//            System.out.println(car.toString());
+//        }
+//
+//        sc.close();
+//    }
+//}
