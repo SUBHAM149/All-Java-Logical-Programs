@@ -1,0 +1,32 @@
+package DeepCopy;
+
+public class Product2 {
+
+	public static void main(String[] args) {
+		Laptop lap1=new Laptop();
+		Laptop lap2=new Laptop();
+		
+		IO.println("Before Modification Price: ");
+		IO.println(lap1.getPrice()+" : "+lap2.getPrice());
+		
+		lap2.setPrice(90000);
+		IO.println("After Modification Price: ");
+		IO.println(lap1.getPrice()+" : "+lap2.getPrice());
+
+	}
+
+}
+
+class Laptop
+{
+	private double price=85000;
+	
+	public double getPrice()
+	{
+		return price;
+	}
+	public void setPrice(double price)
+	{
+		this.price=price;
+	}
+}
