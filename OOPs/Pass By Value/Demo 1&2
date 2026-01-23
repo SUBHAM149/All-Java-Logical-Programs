@@ -1,0 +1,34 @@
+package com.sub.pass_by_value;
+
+public class PassByValueDemo1 {
+       
+	void main() {
+		int x=10;
+		accept(x);
+		IO.println(x);
+	}
+	
+	public void accept(int y)
+	{
+		y=20;
+		
+	}
+}
+----------------------------------------------------
+package com.sub.pass_by_value;
+public class PassByValueDemo2 {
+    
+	void main() {
+		int x=10;
+		x=accept(x);
+		IO.println(x);
+	}
+	
+	public int accept(int y)
+	{
+		y=20;
+		return y;
+	}
+}
+
+
