@@ -1,0 +1,44 @@
+//BLC
+package factory_method;
+
+class bookdemo1 {
+
+	    private String title;
+		private String author;
+		private double price;
+		
+		
+		private bookdemo1(String title, String author, double price) {
+			super();
+			this.title = title;
+			this.author = author;
+			this.price = price;
+		}
+
+
+		@Override
+		public String toString() {
+			return "book [title=" + title + ", author=" + author + ", price=" + price + "]";
+		}
+		
+		public static bookdemo1 getbookdemo1Object()
+		{
+			bookdemo1 book=new bookdemo1("Java","James Gosling",1200);
+			return book;
+		}	
+}
+
+//ELC
+package factory_method;
+
+public class StaticFactoryMethodDemo1 {
+
+	public static void main(String[] args) {
+		bookdemo1 book=bookdemo1.getbookdemo1Object();
+		IO.print(book);
+
+	}
+
+}
+
+
