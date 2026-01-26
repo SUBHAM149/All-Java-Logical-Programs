@@ -1,0 +1,75 @@
+package Encapsulation;
+//BLC
+public class Employee {
+   private String name;
+   private double salary;
+   
+   public Employee(String name,double salary) 
+   {
+	   this.name=name;
+	   this.salary=salary;
+   }
+   public String toString()
+   {
+	   return "Employee [name="+name+", salry= "+salary+"]"; 
+   }
+   
+   //getter
+   public String getName() 
+   {
+	   return name;
+   }  
+   //setter
+   public void setName(String name) 
+   {
+	   this.name=name;
+   }
+     
+   //getter
+   public double getSalary() 
+   {
+	   return salary;
+   }
+   
+   //setter
+   public void setSalry(double salary) 
+   {
+	   if (salary<this.salary) 
+	   {
+		   System.out.println("Invalid Data");
+		   System.exit(0);
+	   }
+	   this.salary=salary;
+   }
+
+//ELC
+   package Encapsulation;
+
+import java.util.Scanner;
+
+public class EmployeeDemo {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		
+		
+		System.out.println("Enter Employee Name :");
+		String name=sc.nextLine();
+		
+		System.out.println("Enter Employee Slary :");
+		double salary=Double.parseDouble(sc.nextLine());
+				
+		Employee emp=new Employee(name,salary);
+		System.out.println("Enter Your Increment AMount :");
+		double increment=Double.parseDouble(sc.nextLine());
+		
+		emp.setSalry(emp.getSalary()+increment);
+		System.out.println(emp);
+		sc.close();
+
+	}
+
+}
+
+   
+}
