@@ -1,0 +1,25 @@
+// Doing in EDIT PLUS
+public class Sample
+{
+    private int i1=900;
+	
+	void main()
+	{
+		Sample s1=new Sample();
+		Sample s2=new Sample();
+		Sample s3=modify(s2);
+		
+		s1=null;
+		IO.println(s2.i1);
+	}
+	public Sample modify(Sample s)
+	{
+		s.i1=9;
+		s=new Sample();
+		s.i1=20;
+		IO.println(s.i1);
+		s=null;
+		return s;
+	}
+}  
+
