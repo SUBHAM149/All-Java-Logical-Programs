@@ -1,0 +1,59 @@
+package factory_method;
+import java.util.Scanner;
+public class Student {
+
+	private String name;
+	private int age;
+	private String grade;
+	
+	
+	public Student(String name, int age, String grade) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.grade = grade;
+	}
+	
+	public static Student createStudentObject(String name, int age, String grade) {
+		return new Student(name, age, grade);
+	}
+
+
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", age=" + age + ", grade=" + grade + "]";
+	}
+
+}
+ class TestStudent {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		
+		while(true) {
+			IO.println("Enter Student Name: ");
+	         String name = sc.nextLine();
+	         
+	        IO.println("Enter Student Age: ");
+	         int age= Integer.parseInt(sc.nextLine());
+	         
+	         IO.println("Enter Student Grade: ");
+	         String grade= sc.nextLine();
+	         
+	         Student student = Student.createStudentObject(name, age, grade);
+	         
+	         System.out.println(student.toString());
+	         
+	         System.out.print("Do you want to continue? (yes/no): ");
+	         String choice = sc.nextLine();
+	
+	         if (choice.equalsIgnoreCase("no")) {
+	             System.out.println("Exiting... Thank you!");
+	             break;
+	         }
+	         
+		}
+		sc.close();
+ }
+}
+//The purpose of the factory method is to provide controlled and centralized object creation.
