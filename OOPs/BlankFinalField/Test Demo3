@@ -1,0 +1,27 @@
+package com.sub.blank_final_field;
+
+public class BlankFinalFieldDemo3 {
+
+	public static void main(String[] args) {
+		Test t1=new Test();
+		IO.println("User Value is: "+t1.x);
+
+	}
+
+}
+class Test
+{
+	final int x;
+	{
+		printValue();
+		x=100;
+	}
+	public void printValue()
+	{
+		IO.println("Defult Value: "+x);
+	}
+}
+*/
+OUTPUT
+Defult Value: 0
+User Value is: 100  /*
