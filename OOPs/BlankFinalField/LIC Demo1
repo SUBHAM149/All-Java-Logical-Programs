@@ -1,0 +1,19 @@
+package com.sub.blank_final_field;
+class LIC
+{
+	final double installment;
+	{
+		installment=25860.89;
+	}
+}
+public class BlankFinalFieldDemo1 {
+	public static void main(String[] args) {
+		LIC lic= new LIC();
+		IO.println(lic.installment);
+
+	}
+
+}
+/*
+OUTPUT
+25860.89 */
