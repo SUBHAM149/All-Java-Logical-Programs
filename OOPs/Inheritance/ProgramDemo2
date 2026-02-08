@@ -1,0 +1,33 @@
+package com.sub.inheritance_understanding;
+class Super{
+	private int a;
+	private int b;
+	public void setData(int a, int b)
+	{
+		this.a=a;
+		this.b=b;
+	}
+	public int getA() {
+		return a;
+	}
+	public int getB() {
+		return b;
+	}
+}
+class Sub extends Super
+{
+	public void showData()
+	{
+		IO.println("a value is : "+getA());
+		IO.println("b value is : "+getB());
+	}
+}
+public class Programdemo2 {
+	public static void main(String[] args) {
+		Sub s1=new Sub();
+		s1.setData(100,200);
+		s1.showData();
+
+	}
+
+}
